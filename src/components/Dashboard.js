@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';  // Estilos personalizados para o dashboard
 
 const Dashboard = () => {
-  const [agendamentos, setAgendamentos] = useState(0);
-  const [aniversariantes, setAniversariantes] = useState([]);
-  const [proximosAniversariantes, setProximosAniversariantes] = useState([]);
+    const [agendamentos] = useState([0]); // Se não precisa setar ainda, remover setAgendamentos
+    const [aniversariantes] = useState([]);
+    const [proximosAniversariantes] = useState([]);
+    
   const navigate = useNavigate();
 
   useEffect(() => {
