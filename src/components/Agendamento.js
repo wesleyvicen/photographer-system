@@ -236,7 +236,11 @@ const Agendamento = () => {
           {selectedEvent ? (
             <>
               <h2>Detalhes do Agendamento</h2>
-              <p><strong>Cliente:</strong> <a href="#" onClick={() => handleClientClick(selectedEvent)} className="client-link">{selectedEvent.client}</a></p>
+              <p><strong>Cliente:</strong> 
+                <button onClick={() => handleClientClick(selectedEvent)} className="client-link">
+                    {selectedEvent.client}
+                </button>
+              </p>
               <p><strong>Telefone:</strong> {selectedEvent.phone}</p>
               <p><strong>Horário de Início:</strong> 
                 <input
