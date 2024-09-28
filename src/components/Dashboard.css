@@ -1,0 +1,75 @@
+/* src/components/Dashboard.css */
+
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .agendamentos-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .agendamentos-count {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  .aniversariantes-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .aniversariantes-dia, .proximos-aniversariantes {
+    width: 45%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,0 +1,358 @@
+/* src/components/Agendamento.css */
+
+/* Estilo geral do container */
+.agendamento-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo da barra de busca */
+.search-container {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Organização do DatePicker e calendário lado a lado */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo do DatePicker à esquerda */
+.datepicker-container {
+    width: 25%;
+    min-width: 200px;
+    background-color: #f0f0f5;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.datepicker-container h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo dos botões de visualização (Day, Week, Agenda) */
+.view-options {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.view-options button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    max-width: 150px; /* Limitar a largura dos botões */
+}
+
+.view-options button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do calendário à direita */
+.calendar-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste do calendário para não quebrar a tela */
+.rbc-calendar {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.rbc-toolbar {
+    display: none; /* Esconder a toolbar original */
+}
+
+/* Estilo do modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo escuro transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 1; /* Modificado para garantir que o modal seja sempre visível ao abrir */
+    animation: fadeIn 0.3s ease forwards; /* Animação de opacidade */
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content label {
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-content input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal-content input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Exibir os campos de Início e Término lado a lado */
+.datetime-container {
+    display: flex;
+    gap: 20px;
+}
+
+.datetime {
+    flex: 1;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+/* Animação de opacidade (já no centro) */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+/* Remove os botões originais do calendário */
+.rbc-toolbar button {
+    display: none;
+}
+
+/* Estilo para o campo de pesquisa de cliente */
+.client-search {
+    position: relative;
+}
+  
+.client-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
+
+.client-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.client-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo do modal */
+.modal-content a {
+    color: #4CAF50;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-content a:hover {
+    color: #45a049;
+}
+
+/* Botão de WhatsApp */
+.modal-content button {
+    background-color: #25D366; /* Cor típica do WhatsApp */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #1EBE5D;
+}
+
+/* Estilo do menu de contexto */
+.context-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.context-menu p {
+    margin: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.context-menu p:hover {
+    background-color: #f0f0f0;
+}
+/* Ajuste para os inputs de data/hora no modal */
+.modal-content input[type="datetime-local"] {
+    width: 100%; /* O input ocupará 100% da largura disponível no modal */
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding não ultrapasse o limite de largura */
+  }
+  
+  /* Ajuste geral para o modal */
+  .modal-content {
+    max-width: 500px; /* Limite de largura para o modal */
+    width: 90%; /* Proporção da largura do modal */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Previne overflow do conteúdo */
+  }
+/* Ajuste para os inputs de data/hora no modal */
+.modal-content input[type="datetime-local"] {
+    width: 100%; /* O input ocupará 100% da largura disponível no modal */
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding não ultrapasse o limite de largura */
+    transition: border-color 0.3s ease; /* Efeito de transição ao focar */
+  }
+  
+  .modal-content input[type="datetime-local"]:focus {
+    border-color: #4CAF50; /* Cor de destaque ao focar */
+    outline: none; /* Remove a borda padrão */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Adiciona um efeito de foco */
+  }
+  
+  /* Ajuste para o select de status */
+  .modal-content select {
+    width: 100%; /* O select ocupará 100% da largura disponível no modal */
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .modal-content select:focus {
+    border-color: #4CAF50; /* Cor de destaque ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Ajuste geral para o modal */
+  .modal-content {
+    max-width: 500px; /* Limite de largura para o modal */
+    width: 90%; /* Proporção da largura do modal */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Previne overflow do conteúdo */
+  }
+  
+  /* Estilização geral para botões */
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content button:hover {
+    background-color: #45a049;
+  }
+    
